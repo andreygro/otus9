@@ -1,0 +1,14 @@
+#!/bin/bash
+IFS=:
+for folder in $PATH
+do
+echo "$folder:"
+for file in $folder/*
+do
+if [ -x $file ]
+then
+PID=$$
+echo "$file - $PID:$USER "
+fi
+done
+done
